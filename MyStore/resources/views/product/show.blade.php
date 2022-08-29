@@ -21,10 +21,8 @@
   <div class="card-body">
     <h5 class="card-title">Nome: {{$product['name']}}</h5>
     <h5 class="card-title">valor unitário: {{$product['unitary_value']}}</h5>
-    <a href="#" class="btn btn-primary">Fazer um Pedido</a>
   </div>
 </div>
     </div>
-
 </main>
 @endsection

@@ -125,7 +125,6 @@ class DeliveryController extends Controller
             'x-access-token'=> $acess
         ])->post($URL,['shipping_value'=>$shipping_value]);
 
-
         $URL_tracking = 'http://127.0.0.1:8090/tracking/request/'.$id_request;
         $tracking = Http::withHeaders([
             'x-access-token'=> $acess
@@ -137,6 +136,5 @@ class DeliveryController extends Controller
             $msg = "Entrega Salva com Sucesso";
             return view('dashboard',['msg'=>$msg]);
         }
-
     }
 }

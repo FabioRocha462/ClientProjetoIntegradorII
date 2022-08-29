@@ -10,19 +10,27 @@
             <th scope="col"><strong>Data</strong></th>
             <th scope="col">Previsão de Entrega</th>
             <th scope="col">local em transito</th>
+            <th scope="col">Status da entrega</th>
             <th scope="col">Valor do Frete</th>
           </tr>
         </thead>
         <tbody>
         @foreach ($deliverys as $d)
-        @if($d['status'] == 0)
           <tr>
                 <td>{{date('d/m/y',strtotime($d['date']))}} </td>
                 <td>{{date('d/m/y',strtotime($d['date_delivery']))}}</td>
                 <td>{{$d['locality']}}</td>
+                <td>@if($d['status'] ==0)
+                       <stron> Não Entregue </strong>
+                    @endif
+                    @if($d['status'] ==1)
+                        <strong>Entregue</strong>
+                    @endif
+                </td>
+                
+  
                 <td>{{$d['shipping_value']}}</td>
-
-        @endif             
+            
         @endforeach
          </tr>   
    

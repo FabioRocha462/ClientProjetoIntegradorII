@@ -25,7 +25,14 @@
                 </a>
                 <div class="navbar-collapse justify-content-end" id="navbar-links">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#linha1">produtos</a>
+                       <a class="nav-link" href="/formcod">Rastrei seu pedido</a>
+                        @auth
+                        <a class="nav-link" href="{{route('client.index')}}">Clientes</a>
+                        <a class="nav-link " href="{{route('product.index')}}">Produtos</a>
+                        <a class="nav-link " href="{{route('report.index')}}">Relatórios</a>
+                        <a class="nav-link " href="/create_token">Login TransFÉ</a>
+                        @endauth
+                        
                         <a class="nav-item nav-link" href="#linha2">Quem somos</a>
                         @guest
                         <li class="nav-item"> <a class="nav-link text-dark" aria-current="page" href="/login"><button type="button" class="btn btn-warning">logar</button></a></li>
@@ -41,18 +48,7 @@
     </header>
     @auth
         <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('client.index')}}">Cliente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="{{route('product.index')}}">Produto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="{{route('report.index')}}">Relatórios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/create_token">Login TransFÉ</a>
-            </li>
+           
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <button type="button" class="btn btn-dark">{{auth()->user()->name}}</button>

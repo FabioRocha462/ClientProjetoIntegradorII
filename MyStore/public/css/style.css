@@ -254,3 +254,10 @@ main{
     justify-content: center;
     margin-bottom: 100px;
 }
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
