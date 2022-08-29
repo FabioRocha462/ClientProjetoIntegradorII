@@ -77,3 +77,6 @@ Route ::get('/getrequest/{id}',[RequestController::class, 'Request_product'])-> 
 Route ::get('/delivery_create/{id}',[DeliveryController::class, 'DeliveryCreated'])-> middleware( 'auth' );
 Route ::get('/delivery_address/{id1}/{id2}',[DeliveryController::class, 'DeliveryAddress'])-> middleware( 'auth' );
 Route ::get('delivery_salve/{id1}/{id2}',[DeliveryController::class, 'SalveDelvery'])-> middleware( 'auth' );
+
+Route::get('/formcod',[TrackingController:: class, 'searchCod']);
+Route::get('/sendcod',[TrackingController:: class, 'sendCod']);
